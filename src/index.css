@@ -1,0 +1,94 @@
+@import "tailwindcss";
+@import "./styles/crt.css";
+
+:root {
+  --crt-color-background: #091106;
+  --crt-color-panel: rgba(11, 22, 8, 0.86);
+  --crt-color-panel-strong: #101c0d;
+  --crt-color-line: #29401e;
+  --crt-color-line-bright: #4f7a39;
+  --crt-color-foreground: #d8f0d0;
+  --crt-color-copy: #bad0b4;
+  --crt-color-muted: #7f9878;
+  --crt-color-dim: #5f7658;
+  --crt-color-accent: #41ff75;
+  --crt-color-accent-soft: rgba(65, 255, 117, 0.16);
+  --crt-color-selection-bg: #41ff75;
+  --crt-color-selection-fg: #091106;
+
+  --crt-font-body: "JetBrains Mono", monospace;
+  --crt-font-label: "Space Mono", monospace;
+
+  --crt-space-unit: 4px;
+  --crt-space-gutter: 24px;
+  --crt-space-margin: 32px;
+  --crt-container-max: 1200px;
+
+  --crt-glow-soft: 0 0 6px rgba(65, 255, 117, 0.55);
+  --crt-glow-strong: 0 0 18px rgba(65, 255, 117, 0.28);
+}
+
+@theme inline {
+  --color-background: var(--crt-color-background);
+  --color-panel: var(--crt-color-panel);
+  --color-panel-strong: var(--crt-color-panel-strong);
+  --color-line: var(--crt-color-line);
+  --color-line-bright: var(--crt-color-line-bright);
+  --color-foreground: var(--crt-color-foreground);
+  --color-copy: var(--crt-color-copy);
+  --color-muted: var(--crt-color-muted);
+  --color-dim: var(--crt-color-dim);
+  --color-accent: var(--crt-color-accent);
+  --color-accent-soft: var(--crt-color-accent-soft);
+
+  --font-body: var(--crt-font-body);
+  --font-label: var(--crt-font-label);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    border-color: var(--crt-color-line);
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    background:
+      radial-gradient(circle at top, rgba(65, 255, 117, 0.08), transparent 30%),
+      var(--crt-color-background);
+    color: var(--crt-color-foreground);
+    font-family: var(--crt-font-body);
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body::selection,
+  *::selection {
+    background: var(--crt-color-selection-bg);
+    color: var(--crt-color-selection-fg);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  #root {
+    min-height: 100vh;
+    isolation: isolate;
+  }
+}
