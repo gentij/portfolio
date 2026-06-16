@@ -2,30 +2,31 @@
 @import "./styles/crt.css";
 
 :root {
-  --crt-color-background: #091106;
-  --crt-color-panel: rgba(11, 22, 8, 0.86);
-  --crt-color-panel-strong: #101c0d;
-  --crt-color-line: #29401e;
-  --crt-color-line-bright: #4f7a39;
-  --crt-color-foreground: #d8f0d0;
-  --crt-color-copy: #bad0b4;
-  --crt-color-muted: #7f9878;
-  --crt-color-dim: #5f7658;
-  --crt-color-accent: #41ff75;
-  --crt-color-accent-soft: rgba(65, 255, 117, 0.16);
+  --crt-color-background: #040904;
+  --crt-color-panel: rgba(6, 14, 5, 0.9);
+  --crt-color-panel-strong: #0a1408;
+  --crt-color-line: #1f3817;
+  --crt-color-line-bright: #56b53a;
+  --crt-color-foreground: #def7d3;
+  --crt-color-copy: #b9ceb2;
+  --crt-color-muted: #85a17d;
+  --crt-color-dim: #62855d;
+  --crt-color-accent: #4dff68;
+  --crt-color-accent-soft: rgba(77, 255, 104, 0.12);
   --crt-color-selection-bg: #41ff75;
   --crt-color-selection-fg: #091106;
 
   --crt-font-body: "JetBrains Mono", monospace;
-  --crt-font-label: "Space Mono", monospace;
+  --crt-font-display: "Share Tech Mono", "JetBrains Mono", monospace;
+  --crt-font-label: "Share Tech Mono", "Space Mono", monospace;
 
   --crt-space-unit: 4px;
   --crt-space-gutter: 24px;
   --crt-space-margin: 32px;
-  --crt-container-max: 1200px;
+  --crt-container-max: 1360px;
 
-  --crt-glow-soft: 0 0 6px rgba(65, 255, 117, 0.55);
-  --crt-glow-strong: 0 0 18px rgba(65, 255, 117, 0.28);
+  --crt-glow-soft: 0 0 7px rgba(77, 255, 104, 0.7);
+  --crt-glow-strong: 0 0 20px rgba(77, 255, 104, 0.38);
 }
 
 @theme inline {
@@ -42,6 +43,7 @@
   --color-accent-soft: var(--crt-color-accent-soft);
 
   --font-body: var(--crt-font-body);
+  --font-display: var(--crt-font-display);
   --font-label: var(--crt-font-label);
 }
 
@@ -60,10 +62,13 @@
     margin: 0;
     min-width: 320px;
     background:
-      radial-gradient(circle at top, rgba(65, 255, 117, 0.08), transparent 30%),
+      radial-gradient(circle at top, rgba(77, 255, 104, 0.12), transparent 28%),
+      radial-gradient(circle at center, rgba(35, 98, 33, 0.1), transparent 45%),
       var(--crt-color-background);
     color: var(--crt-color-foreground);
     font-family: var(--crt-font-body);
+    letter-spacing: 0.01em;
+    text-shadow: 0 0 1px rgba(77, 255, 104, 0.16);
     text-rendering: geometricPrecision;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
