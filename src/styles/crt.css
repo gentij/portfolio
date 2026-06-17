@@ -58,7 +58,7 @@
 
 .crt-shell {
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at 50% 18%, rgba(74, 255, 95, 0.06), transparent 25%),
     var(--crt-color-background);
@@ -177,6 +177,62 @@
   background: var(--crt-color-accent);
   box-shadow: 0 0 12px rgba(77, 255, 104, 0.85);
   animation: crt-cursor-blink 1s steps(1, end) infinite;
+}
+
+.crt-media {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(10, 18, 8, 0.98), rgba(5, 10, 4, 0.94)),
+    var(--crt-color-panel-strong);
+  box-shadow:
+    inset 0 0 0 1px rgba(77, 255, 104, 0.06),
+    inset 0 0 28px rgba(16, 54, 14, 0.22),
+    0 0 18px rgba(45, 130, 38, 0.1);
+}
+
+.crt-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(77, 255, 104, 0.085) 0,
+      rgba(77, 255, 104, 0.085) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 16%, transparent 82%, rgba(0, 0, 0, 0.24));
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.crt-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at center, transparent 56%, rgba(0, 0, 0, 0.3) 100%),
+    linear-gradient(90deg, rgba(70, 255, 112, 0.08), rgba(0, 0, 0, 0));
+  z-index: 1;
+}
+
+.crt-media > img,
+.crt-media > video,
+.crt-media > div {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.crt-media > img,
+.crt-media > video {
+  object-fit: cover;
+  filter: saturate(0.92) contrast(1.08) brightness(0.9);
 }
 
 @media (prefers-reduced-motion: no-preference) {

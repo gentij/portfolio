@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom'
 import { ArrowList } from '../components/ui/ArrowList'
 import { CommandLine } from '../components/ui/CommandLine'
+import { ProjectMedia } from '../components/projects/ProjectMedia'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { Tag } from '../components/ui/Tag'
-import { TerminalCard } from '../components/ui/TerminalCard'
 import { TerminalWindow } from '../components/ui/TerminalWindow'
 import { site } from '../data/site'
 
 const featuredProjects = site.projects.slice(0, 3)
+const homeFeaturedProject = site.projects[0]
 
 export function HomePage() {
   return (
@@ -35,7 +36,7 @@ export function HomePage() {
         }
       />
 
-      <div className="grid gap-6 xl:grid-cols-[1.2fr_0.8fr]">
+      <div className="grid gap-6 xl:grid-cols-[0.86fr_1.14fr] xl:items-start">
         <TerminalWindow command="whoami" className="min-w-0">
           <div className="space-y-5">
             <div className="border-l border-line pl-4">
@@ -52,69 +53,70 @@ export function HomePage() {
               <Tag>Go</Tag>
             </div>
 
+            <div className="grid gap-3 border-t border-line pt-4 text-[11px] uppercase tracking-[0.2em] text-dim sm:grid-cols-3">
+              <div>
+                <p className="text-muted">role</p>
+                <p className="mt-2 text-foreground">{site.person.role}</p>
+              </div>
+              <div>
+                <p className="text-muted">location</p>
+                <p className="mt-2 text-foreground">{site.person.location}</p>
+              </div>
+              <div>
+                <p className="text-muted">focus</p>
+                <p className="mt-2 text-foreground">frontend backend desktop</p>
+              </div>
+            </div>
+
             <CommandLine trailing={<span className="crt-cursor" aria-hidden="true" />} />
           </div>
         </TerminalWindow>
 
-        <TerminalWindow title="system profile">
-          <div className="space-y-4 text-sm leading-7 text-copy">
-            <div className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-2 text-[11px] uppercase tracking-[0.2em]">
-              <span className="text-muted">role</span>
-              <span className="text-foreground">{site.person.role}</span>
-              <span className="text-muted">location</span>
-              <span className="text-foreground">{site.person.location}</span>
-              <span className="text-muted">focus</span>
-              <span className="text-foreground">Frontend, backend, realtime, integrations, desktop</span>
-              <span className="text-muted">contact</span>
-              <a className="text-foreground hover:text-accent" href={`mailto:${site.person.email}`}>
-                {site.person.email}
-              </a>
-            </div>
-          </div>
-        </TerminalWindow>
+        <ProjectMedia project={homeFeaturedProject} autoplay />
       </div>
 
       <TerminalWindow command="ls -la ./featured_projects">
-        <div className="grid gap-4 lg:grid-cols-3">
+        <div className="space-y-4">
           {featuredProjects.map((project) => (
-            <TerminalCard
+            <div
               key={project.slug}
-              eyebrow={project.eyebrow}
-              title={project.name}
-              description={project.summary}
-              footer={
-                <div className="space-y-4">
-                  <div className="flex flex-wrap gap-2">
-                    {project.stack.slice(0, 4).map((stack) => (
-                      <Tag key={stack}>{stack}</Tag>
-                    ))}
-                  </div>
-                  <div className="flex flex-wrap gap-4 text-[11px] uppercase tracking-[0.2em]">
-                    {project.links.map((link) => (
-                      <a
-                        key={link.href}
-                        href={link.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-muted transition-colors hover:text-foreground"
-                      >
-                        {link.label}
-                      </a>
-                    ))}
-                  </div>
+              className="grid gap-4 border-b border-line pb-4 last:border-b-0 last:pb-0 md:grid-cols-[minmax(0,1fr)_auto] md:items-start"
+            >
+              <div>
+                <div className="flex flex-wrap items-center gap-3">
+                  <h3 className="font-display text-xl text-foreground crt-glow">{project.name}</h3>
+                  <span className="font-label text-[10px] uppercase tracking-[0.22em] text-muted">
+                    {project.eyebrow}
+                  </span>
                 </div>
-              }
-            />
+                <p className="mt-3 max-w-3xl text-sm leading-7 text-copy">{project.summary}</p>
+              </div>
+
+              <div className="flex flex-wrap gap-2 md:justify-end">
+                {project.links.slice(0, 2).map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="border border-line px-3 py-2 font-label text-[10px] uppercase tracking-[0.22em] text-muted transition-colors hover:border-line-bright hover:text-foreground"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </TerminalWindow>
 
-      <div className="grid gap-4 lg:grid-cols-2">
-        <TerminalCard eyebrow="current focus" title="What I am building right now">
+      <div className="grid gap-6 xl:grid-cols-[0.95fr_1.05fr] xl:items-start">
+        <TerminalWindow title="current focus">
           <ArrowList items={site.person.currently} />
-        </TerminalCard>
+        </TerminalWindow>
 
-        <TerminalCard eyebrow="experience snapshot" title="Where the work comes from">
+        <div className="space-y-3">
+          <p className="font-label text-[10px] uppercase tracking-[0.26em] text-muted">experience snapshot</p>
           <ul className="space-y-3 text-sm leading-7 text-copy">
             {site.experience.map((role) => (
               <li key={role.company} className="flex items-start justify-between gap-4 border-b border-line pb-3 last:border-b-0 last:pb-0">
@@ -126,7 +128,7 @@ export function HomePage() {
               </li>
             ))}
           </ul>
-        </TerminalCard>
+        </div>
       </div>
     </div>
   )

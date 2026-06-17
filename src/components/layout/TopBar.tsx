@@ -9,8 +9,8 @@ type TopBarProps = {
 
 export function TopBar({ navItems }: TopBarProps) {
   return (
-    <header className="border-b border-line bg-background/90 backdrop-blur-sm">
-      <div className="mx-auto flex w-full max-w-[var(--crt-container-max)] flex-col gap-4 px-4 py-4 md:px-6">
+    <header className="fixed inset-x-0 top-0 z-30 border-b border-line bg-background/92 backdrop-blur-sm h-[var(--crt-shell-header-height-mobile)] md:h-[var(--crt-shell-header-height)]">
+      <div className="mx-auto flex h-full w-full max-w-[var(--crt-container-max)] flex-col justify-start gap-4 px-4 py-4 md:justify-center md:px-6">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="font-label text-[10px] uppercase tracking-[0.3em] text-muted">

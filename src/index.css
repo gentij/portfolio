@@ -24,6 +24,8 @@
   --crt-space-gutter: 24px;
   --crt-space-margin: 32px;
   --crt-container-max: 1360px;
+  --crt-shell-header-height: 124px;
+  --crt-shell-header-height-mobile: 232px;
 
   --crt-glow-soft: 0 0 7px rgba(77, 255, 104, 0.7);
   --crt-glow-strong: 0 0 20px rgba(77, 255, 104, 0.38);
@@ -58,6 +60,11 @@
     scroll-behavior: smooth;
   }
 
+  html.browser-safari {
+    --crt-glow-soft: 0 0 2px rgba(77, 255, 104, 0.18);
+    --crt-glow-strong: 0 0 5px rgba(77, 255, 104, 0.08);
+  }
+
   body {
     margin: 0;
     min-width: 320px;
@@ -72,6 +79,17 @@
     text-rendering: geometricPrecision;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  html.browser-safari body {
+    text-shadow: none;
+    text-rendering: auto;
+  }
+
+  html.browser-safari .crt-glow {
+    text-shadow:
+      0 0 1px rgba(77, 255, 104, 0.55),
+      0 0 4px rgba(77, 255, 104, 0.12);
   }
 
   body::selection,

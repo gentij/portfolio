@@ -9,9 +9,9 @@ export const site = {
     resume: '/GentritJashariResume.pdf',
     yearsExperience: '6+ years',
     summary:
-      'Full Stack Engineer with 6+ years building SaaS products, internal platforms, realtime systems, APIs, and desktop applications. I work across frontend and backend with a strong focus on maintainable architecture, product delivery, and practical performance.',
+      'Full Stack Engineer with 6+ years across SaaS products, integrations, realtime systems, and desktop software.',
     intro:
-      'My experience spans product teams and client-facing software, from project management tools and restaurant platforms to integrations, realtime systems, and AI-powered desktop applications. I enjoy work that needs both product thinking and engineering discipline.',
+      'I build practical software for real use cases, from business platforms and internal tools to integrations and local desktop applications.',
     resumeIntro:
       'Across the last 6+ years I have worked on SaaS products, business platforms, realtime systems, integrations, and custom internal tools. The common thread is shipping practical software that is reliable, clear to operate, and valuable to the people using it.',
     focus: [
@@ -32,13 +32,12 @@ export const site = {
       name: 'Lunie',
       eyebrow: 'featured platform',
       summary:
-        'A self-hosted workflow automation engine for technical users who want local control, API-first automation, and inspectable execution history.',
+        'Self-hosted workflow automation with an API server, workers, CLI, and TUI.',
       detail:
-        'Lunie ships with an API server, worker-based execution, a CLI for lifecycle management, and a terminal UI for operator workflows. The current MVP supports HTTP, transform, and condition steps, with documentation published as a dedicated docs site.',
+        'Built for technical users who want local control, API-first automation, and inspectable execution history.',
       bullets: [
         'Built as a multi-part system with NestJS + Fastify, BullMQ workers, Prisma, PostgreSQL, Redis, and a Go CLI/TUI.',
-        'Designed for developers who want to own their automation stack instead of depending on a closed SaaS workflow product.',
-        'Structured to support local deployment, operational visibility, and an API-first approach from day one.',
+        'Supports local deployment, operator visibility, and an API-first workflow model from day one.',
       ],
       stack: ['TypeScript', 'NestJS', 'Fastify', 'Go', 'Prisma', 'PostgreSQL', 'Redis', 'Docker'],
       links: [
@@ -51,13 +50,12 @@ export const site = {
       name: 'Stemmer',
       eyebrow: 'desktop application',
       summary:
-        'A local desktop application for AI-powered audio stem separation with a retro cassette-inspired interface and interactive stem mixing.',
+        'Local desktop app for AI stem separation with a retro cassette-inspired interface.',
       detail:
-        'Stemmer focuses on performance, privacy, and usability. It provides drag-and-drop audio loading, waveform visualization, multiple visual themes, recent files support, and a stem mixer for working with separated tracks directly on-device.',
+        'Designed around local processing, multiple visual themes, waveform feedback, and interactive stem mixing.',
       bullets: [
         'Built with Tauri, Vue, TypeScript, and a Rust-powered audio engine.',
         'Uses stem-splitter-core for the underlying source separation pipeline.',
-        'Presents a more distinctive product experience through its themed desktop UI rather than a standard utility interface.',
       ],
       stack: ['Rust', 'Tauri', 'Vue', 'TypeScript', 'ONNX Runtime', 'Desktop UX'],
       links: [
@@ -70,13 +68,12 @@ export const site = {
       name: 'stem-splitter-core',
       eyebrow: 'rust library + cli',
       summary:
-        'A pure Rust audio stem separation library and CLI powered by ONNX Runtime, built to make local AI audio processing fast, reusable, and production-ready.',
+        'Rust library and CLI for local audio stem separation powered by ONNX Runtime.',
       detail:
-        'The library handles model management, decoding, chunking, inference, progress tracking, caching, and multi-provider acceleration across CPU and GPU backends. It is designed as a reusable engine for music tools, creator workflows, and other audio products.',
+        'Designed as a reusable engine for music tools and creator workflows, with model management, caching, and multi-provider acceleration.',
       bullets: [
         'No Python dependency, with a type-safe Rust implementation and first-party CLI distribution.',
-        'Supports provider selection and acceleration paths like CUDA, CoreML, DirectML, oneDNN, and XNNPACK.',
-        'Positioned both as a developer SDK and as the engine behind Stemmer.',
+        'Supports provider selection across CUDA, CoreML, DirectML, oneDNN, and XNNPACK.',
       ],
       stack: ['Rust', 'ONNX Runtime', 'CoreML', 'CUDA', 'Audio Processing', 'CLI'],
       links: [
@@ -90,13 +87,12 @@ export const site = {
       name: 'Google Workspace Event Integration API',
       eyebrow: 'integration backend',
       summary:
-        'A Fastify-based REST API for registering Google Workspace sources, collecting event logs, scheduling processing, and forwarding results to downstream webhooks.',
+        'Integration backend for ingesting Google Workspace events and forwarding them downstream.',
       detail:
-        'The project combines source registration, queue-based processing, retries, caching, and Google Admin SDK integration into a focused backend service for event ingestion workflows.',
+        'Combines source registration, queue-based processing, retries, caching, and Google Admin SDK integration into one focused service.',
       bullets: [
         'Built around Fastify, MongoDB, Redis, BullMQ, and Google Workspace Admin SDK integration.',
-        'Handles credentialed source registration, periodic log fetches, retries, rate limit concerns, and webhook forwarding.',
-        'Shows a practical backend integration style with a clear operational workflow.',
+        'Handles credentialed source registration, periodic log fetches, retries, and webhook forwarding.',
       ],
       stack: ['TypeScript', 'Fastify', 'MongoDB', 'Redis', 'BullMQ', 'Google Admin SDK'],
       links: [{ label: 'GitHub', href: 'https://github.com/gentij/google-workspace-event-integration' }],

@@ -5,7 +5,7 @@ export function StatusFooter() {
   const location = useLocation()
 
   return (
-    <footer className="crt-panel mt-8 px-4 py-3 md:px-5">
+    <footer className="crt-panel mt-6 mb-4 px-4 py-3 md:mt-6 md:mb-4 md:px-5">
       <div className="flex flex-col gap-3 text-[11px] uppercase tracking-[0.22em] text-dim md:flex-row md:items-center md:justify-between">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <span>cwd: {location.pathname}</span>
