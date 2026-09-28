@@ -11,7 +11,7 @@ export function ResumePage() {
     <div className="space-y-6">
       <SectionHeading
         label="resume dossier"
-        title="Experience, stack, and education in one fast route"
+        title="Ownership, stack, and experience"
         aside={
           <a
             href={site.person.resume}
@@ -99,12 +99,12 @@ export function ResumePage() {
           }
         />
 
-        <TerminalCard eyebrow="current direction" title="What I want this portfolio to signal">
+      <TerminalCard eyebrow="current direction" title="What I bring to a team">
           <ArrowList
             items={[
-              'Production experience across frontend, backend, realtime systems, and product-oriented platform work.',
-              'A track record of building useful software in both client-facing and internal operational contexts.',
-              'Range across TypeScript product engineering and lower-level Rust application work.',
+              'End-to-end ownership across SaaS, automation platforms, integrations, and AI-enabled workflows.',
+              'A track record of building practical systems that are reliable, observable, and clear to operate.',
+              'Range across TypeScript product engineering, backend systems, and lower-level Rust tooling.',
             ]}
           />
         </TerminalCard>

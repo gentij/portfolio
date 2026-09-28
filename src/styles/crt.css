@@ -90,7 +90,7 @@
       rgba(0, 255, 128, 0.025),
       rgba(0, 72, 255, 0.045)
     );
-  opacity: 0.5;
+  opacity: 0.18;
   z-index: 0;
 }
 
@@ -100,7 +100,7 @@
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at center, transparent 54%, rgba(0, 0, 0, 0.46) 100%),
+    radial-gradient(circle at center, transparent 58%, rgba(0, 0, 0, 0.28) 100%),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.04), transparent 10%, transparent 88%, rgba(0, 0, 0, 0.42));
   z-index: 0;
 }
@@ -109,7 +109,7 @@
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background: rgba(18, 16, 16, 0.14);
+  background: rgba(18, 16, 16, 0.06);
   mix-blend-mode: screen;
   animation: crt-flicker 0.18s infinite;
   z-index: 1;
@@ -117,7 +117,7 @@
 
 .crt-panel {
   position: relative;
-  border: 1px solid var(--crt-color-line-bright);
+  border: 1px solid var(--crt-color-line);
   background:
     linear-gradient(180deg, rgba(9, 18, 8, 0.98), rgba(5, 12, 4, 0.94)),
     var(--crt-color-panel);
@@ -125,7 +125,7 @@
     inset 0 0 0 1px rgba(77, 255, 104, 0.08),
     inset 0 0 30px rgba(26, 74, 22, 0.12),
     0 0 0 1px rgba(8, 20, 8, 0.7),
-    0 0 22px rgba(45, 130, 38, 0.12);
+    0 0 16px rgba(45, 130, 38, 0.08);
 }
 
 .crt-panel::before {
@@ -142,9 +142,7 @@
   font-family: var(--crt-font-display);
   font-size: 1rem;
   line-height: 1;
-  text-shadow:
-    0 0 4px rgba(77, 255, 104, 0.9),
-    0 0 10px rgba(77, 255, 104, 0.35);
+  text-shadow: 0 0 4px rgba(77, 255, 104, 0.45);
   z-index: 1;
 }
 
@@ -165,7 +163,7 @@
 
 .crt-glow {
   text-shadow:
-    0 0 4px rgba(77, 255, 104, 0.9),
+    0 0 3px rgba(77, 255, 104, 0.55),
     var(--crt-glow-soft),
     var(--crt-glow-strong);
 }
@@ -243,5 +241,15 @@
     height: 8rem;
     background: linear-gradient(to bottom, transparent, rgba(77, 255, 104, 0.16), transparent);
     animation: crt-scan 8s linear infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
   }
 }

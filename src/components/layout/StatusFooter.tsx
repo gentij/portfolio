@@ -15,7 +15,7 @@ export function StatusFooter() {
 
         <div className="flex flex-wrap items-center gap-4">
           <Link className="text-muted transition-colors hover:text-foreground" to="/projects">
-            ./PROJECTS
+            ./WORK
           </Link>
           <Link className="text-muted transition-colors hover:text-foreground" to="/resume">
             ./RESUME

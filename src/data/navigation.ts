@@ -12,8 +12,8 @@ export const primaryNavItems: NavItem[] = [
   },
   {
     to: '/projects',
-    label: './PROJECTS',
-    description: 'Detailed project directory and links',
+    label: './WORK',
+    description: 'Selected engineering work and technical proof',
   },
   {
     to: '/resume',

@@ -8,6 +8,7 @@ type TerminalCardProps = {
   footer?: ReactNode
   children?: ReactNode
   className?: string
+  descriptionClassName?: string
 }
 
 export function TerminalCard({
@@ -17,6 +18,7 @@ export function TerminalCard({
   footer,
   children,
   className,
+  descriptionClassName = 'flex-1',
 }: TerminalCardProps) {
   return (
     <article className={cn('flex h-full flex-col border border-line bg-panel px-4 py-4', className)}>
@@ -32,7 +34,9 @@ export function TerminalCard({
         </h3>
       ) : null}
 
-      {description ? <p className="mt-3 flex-1 text-sm leading-7 text-copy">{description}</p> : null}
+      {description ? (
+        <p className={cn('mt-3 text-sm leading-7 text-copy', descriptionClassName)}>{description}</p>
+      ) : null}
 
       {children ? <div className="mt-4">{children}</div> : null}
       {footer ? <div className="mt-4 pt-1">{footer}</div> : null}

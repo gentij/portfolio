@@ -8,8 +8,9 @@ export function ProjectsPage() {
   return (
     <div className="space-y-6">
       <SectionHeading
-        label="project index"
-        title="Projects"
+        label="selected engineering work"
+        title="Technical proof"
+        description="Independent systems that show how I approach automation, AI-enabled tooling, integrations, and product delivery."
       />
 
       <div className="space-y-10">

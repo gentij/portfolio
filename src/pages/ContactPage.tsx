@@ -7,7 +7,8 @@ export function ContactPage() {
     <div className="space-y-6">
       <SectionHeading
         label="contact pathways"
-        title="Direct channels, public profiles, and the resume"
+        title="Let&apos;s talk about the work"
+        description="For product engineering roles, collaboration, or a conversation about systems work, email is the fastest route."
       />
 
       <div className="grid gap-4 md:grid-cols-2">
@@ -38,7 +39,7 @@ export function ContactPage() {
       <TerminalCard
         eyebrow="location"
         title={site.person.location}
-        description="Based in Prishtine, Kosovo. Open to roles and collaborations where strong product engineering, backend systems, and tooling work matter."
+        description="Based in Prishtina, Kosovo. Open to roles and collaborations where product ownership, automation, integrations, and practical systems work matter."
       />
     </div>
   )

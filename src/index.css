@@ -16,7 +16,7 @@
   --crt-color-selection-bg: #41ff75;
   --crt-color-selection-fg: #091106;
 
-  --crt-font-body: "JetBrains Mono", monospace;
+  --crt-font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --crt-font-display: "Share Tech Mono", "JetBrains Mono", monospace;
   --crt-font-label: "Share Tech Mono", "Space Mono", monospace;
 
@@ -27,8 +27,8 @@
   --crt-shell-header-height: 124px;
   --crt-shell-header-height-mobile: 232px;
 
-  --crt-glow-soft: 0 0 7px rgba(77, 255, 104, 0.7);
-  --crt-glow-strong: 0 0 20px rgba(77, 255, 104, 0.38);
+  --crt-glow-soft: 0 0 4px rgba(77, 255, 104, 0.28);
+  --crt-glow-strong: 0 0 12px rgba(77, 255, 104, 0.14);
 }
 
 @theme inline {
@@ -75,7 +75,7 @@
     color: var(--crt-color-foreground);
     font-family: var(--crt-font-body);
     letter-spacing: 0.01em;
-    text-shadow: 0 0 1px rgba(77, 255, 104, 0.16);
+    text-shadow: none;
     text-rendering: geometricPrecision;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
